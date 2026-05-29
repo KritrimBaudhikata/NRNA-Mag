@@ -1,0 +1,327 @@
+{
+  "pageCount": 36,
+  "pages": [
+    {
+      "magazinePage": 1,
+      "sourcePage": 1,
+      "src": "/magazine/page-01.png",
+      "width": 4000,
+      "height": 5656,
+      "isCover": true
+    },
+    {
+      "magazinePage": 2,
+      "sourcePage": 2,
+      "src": "/magazine/page-02.png",
+      "width": 2236,
+      "height": 3165,
+      "isCover": false,
+      "side": "left"
+    },
+    {
+      "magazinePage": 3,
+      "sourcePage": 2,
+      "src": "/magazine/page-03.png",
+      "width": 2237,
+      "height": 3165,
+      "isCover": false,
+      "side": "right"
+    },
+    {
+      "magazinePage": 4,
+      "sourcePage": 3,
+      "src": "/magazine/page-04.png",
+      "width": 2236,
+      "height": 3165,
+      "isCover": false,
+      "side": "left"
+    },
+    {
+      "magazinePage": 5,
+      "sourcePage": 3,
+      "src": "/magazine/page-05.png",
+      "width": 2237,
+      "height": 3165,
+      "isCover": false,
+      "side": "right"
+    },
+    {
+      "magazinePage": 6,
+      "sourcePage": 4,
+      "src": "/magazine/page-06.png",
+      "width": 2236,
+      "height": 3165,
+      "isCover": false,
+      "side": "left"
+    },
+    {
+      "magazinePage": 7,
+      "sourcePage": 4,
+      "src": "/magazine/page-07.png",
+      "width": 2237,
+      "height": 3165,
+      "isCover": false,
+      "side": "right"
+    },
+    {
+      "magazinePage": 8,
+      "sourcePage": 5,
+      "src": "/magazine/page-08.png",
+      "width": 2236,
+      "height": 3165,
+      "isCover": false,
+      "side": "left"
+    },
+    {
+      "magazinePage": 9,
+      "sourcePage": 5,
+      "src": "/magazine/page-09.png",
+      "width": 2237,
+      "height": 3165,
+      "isCover": false,
+      "side": "right"
+    },
+    {
+      "magazinePage": 10,
+      "sourcePage": 6,
+      "src": "/magazine/page-10.png",
+      "width": 2236,
+      "height": 3165,
+      "isCover": false,
+      "side": "left"
+    },
+    {
+      "magazinePage": 11,
+      "sourcePage": 6,
+      "src": "/magazine/page-11.png",
+      "width": 2237,
+      "height": 3165,
+      "isCover": false,
+      "side": "right"
+    },
+    {
+      "magazinePage": 12,
+      "sourcePage": 7,
+      "src": "/magazine/page-12.png",
+      "width": 2236,
+      "height": 3165,
+      "isCover": false,
+      "side": "left"
+    },
+    {
+      "magazinePage": 13,
+      "sourcePage": 7,
+      "src": "/magazine/page-13.png",
+      "width": 2237,
+      "height": 3165,
+      "isCover": false,
+      "side": "right"
+    },
+    {
+      "magazinePage": 14,
+      "sourcePage": 8,
+      "src": "/magazine/page-14.png",
+      "width": 2236,
+      "height": 3165,
+      "isCover": false,
+      "side": "left"
+    },
+    {
+      "magazinePage": 15,
+      "sourcePage": 8,
+      "src": "/magazine/page-15.png",
+      "width": 2237,
+      "height": 3165,
+      "isCover": false,
+      "side": "right"
+    },
+    {
+      "magazinePage": 16,
+      "sourcePage": 9,
+      "src": "/magazine/page-16.png",
+      "width": 2236,
+      "height": 3165,
+      "isCover": false,
+      "side": "left"
+    },
+    {
+      "magazinePage": 17,
+      "sourcePage": 9,
+      "src": "/magazine/page-17.png",
+      "width": 2237,
+      "height": 3165,
+      "isCover": false,
+      "side": "right"
+    },
+    {
+      "magazinePage": 18,
+      "sourcePage": 10,
+      "src": "/magazine/page-18.png",
+      "width": 2236,
+      "height": 3165,
+      "isCover": false,
+      "side": "left"
+    },
+    {
+      "magazinePage": 19,
+      "sourcePage": 10,
+      "src": "/magazine/page-19.png",
+      "width": 2237,
+      "height": 3165,
+      "isCover": false,
+      "side": "right"
+    },
+    {
+      "magazinePage": 20,
+      "sourcePage": 11,
+      "src": "/magazine/page-20.png",
+      "width": 2236,
+      "height": 3165,
+      "isCover": false,
+      "side": "left"
+    },
+    {
+      "magazinePage": 21,
+      "sourcePage": 11,
+      "src": "/magazine/page-21.png",
+      "width": 2237,
+      "height": 3165,
+      "isCover": false,
+      "side": "right"
+    },
+    {
+      "magazinePage": 22,
+      "sourcePage": 12,
+      "src": "/magazine/page-22.png",
+      "width": 2236,
+      "height": 3165,
+      "isCover": false,
+      "side": "left"
+    },
+    {
+      "magazinePage": 23,
+      "sourcePage": 12,
+      "src": "/magazine/page-23.png",
+      "width": 2237,
+      "height": 3165,
+      "isCover": false,
+      "side": "right"
+    },
+    {
+      "magazinePage": 24,
+      "sourcePage": 13,
+      "src": "/magazine/page-24.png",
+      "width": 2236,
+      "height": 3165,
+      "isCover": false,
+      "side": "left"
+    },
+    {
+      "magazinePage": 25,
+      "sourcePage": 13,
+      "src": "/magazine/page-25.png",
+      "width": 2237,
+      "height": 3165,
+      "isCover": false,
+      "side": "right"
+    },
+    {
+      "magazinePage": 26,
+      "sourcePage": 14,
+      "src": "/magazine/page-26.png",
+      "width": 2236,
+      "height": 3165,
+      "isCover": false,
+      "side": "left"
+    },
+    {
+      "magazinePage": 27,
+      "sourcePage": 14,
+      "src": "/magazine/page-27.png",
+      "width": 2237,
+      "height": 3165,
+      "isCover": false,
+      "side": "right"
+    },
+    {
+      "magazinePage": 28,
+      "sourcePage": 15,
+      "src": "/magazine/page-28.png",
+      "width": 2236,
+      "height": 3165,
+      "isCover": false,
+      "side": "left"
+    },
+    {
+      "magazinePage": 29,
+      "sourcePage": 15,
+      "src": "/magazine/page-29.png",
+      "width": 2237,
+      "height": 3165,
+      "isCover": false,
+      "side": "right"
+    },
+    {
+      "magazinePage": 30,
+      "sourcePage": 16,
+      "src": "/magazine/page-30.png",
+      "width": 2236,
+      "height": 3165,
+      "isCover": false,
+      "side": "left"
+    },
+    {
+      "magazinePage": 31,
+      "sourcePage": 16,
+      "src": "/magazine/page-31.png",
+      "width": 2237,
+      "height": 3165,
+      "isCover": false,
+      "side": "right"
+    },
+    {
+      "magazinePage": 32,
+      "sourcePage": 17,
+      "src": "/magazine/page-32.png",
+      "width": 2236,
+      "height": 3165,
+      "isCover": false,
+      "side": "left"
+    },
+    {
+      "magazinePage": 33,
+      "sourcePage": 17,
+      "src": "/magazine/page-33.png",
+      "width": 2237,
+      "height": 3165,
+      "isCover": false,
+      "side": "right"
+    },
+    {
+      "magazinePage": 34,
+      "sourcePage": 18,
+      "src": "/magazine/page-34.png",
+      "width": 2236,
+      "height": 3165,
+      "isCover": false,
+      "side": "left"
+    },
+    {
+      "magazinePage": 35,
+      "sourcePage": 18,
+      "src": "/magazine/page-35.png",
+      "width": 2237,
+      "height": 3165,
+      "isCover": false,
+      "side": "right"
+    },
+    {
+      "magazinePage": 36,
+      "sourcePage": 19,
+      "src": "/magazine/page-36.png",
+      "width": 4000,
+      "height": 5656,
+      "isCover": true
+    }
+  ]
+}

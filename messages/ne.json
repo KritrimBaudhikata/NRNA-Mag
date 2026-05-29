@@ -1,0 +1,43 @@
+{
+  "language": {
+    "promptTitle": "आफ्नो भाषा छान्नुहोस्",
+    "english": "English",
+    "nepali": "नेपाली"
+  },
+  "reader": {
+    "downloadPdf": "PDF डाउनलोड",
+    "downloadPdfShort": "PDF",
+    "prev": "अघिल्लो",
+    "next": "अर्को",
+    "pageOf": "पृष्ठ {current} / {total}",
+    "loading": "पत्रिका लोड हुँदैछ…",
+    "swipeHint": "बायाँ वा दायाँ स्वाइप गर्नुहोस्, वा पृष्ठको छेउमा ट्याप गर्नुहोस्",
+    "transitionStyle": "पृष्ठ ट्रान्जिसन",
+    "transitionSlide": "स्लाइड (बिस्तारै)",
+    "transitionCrossfade": "क्रसफेड",
+    "transitionPush": "पुश (पुस्तक)"
+  },
+  "download": {
+    "title": "पत्रिका डाउनलोड गर्नुहोस्",
+    "email": "इमेल ठेगाना",
+    "consent": "मलाई Kritrim Mailing list मा थप्नुहोस् र PDF डाउनलोड गर्न दिनुहोस्",
+    "sendCode": "कोड पठाउनुहोस्",
+    "codeLabel": "६ अङ्कको कोड प्रविष्ट गर्नुहोस्",
+    "verify": "प्रमाणित गरी डाउनलोड",
+    "success": "डाउनलोड सुरु भयो। धन्यवाद!",
+    "invalidEmail": "कृपया मान्य इमेल प्रविष्ट गर्नुहोस्।",
+    "consentRequired": "जारी राख्न सहमति आवश्यक छ।",
+    "codeSent": "हामीले तपाईंको इमेलमा कोड पठायौं।",
+    "invalidCode": "अमान्य वा म्याद सकिएको कोड।",
+    "rateLimited": "धेरै प्रयास। पछि फेरि प्रयास गर्नुहोस्।",
+    "close": "बन्द गर्नुहोस्"
+  },
+  "footer": {
+    "developedBy": "साइट Kritrim Solutions ले विकास गरेको",
+    "whatsapp": "WhatsApp मा सम्पर्क"
+  },
+  "email": {
+    "subject": "Everest Day पत्रिका प्रमाणीकरण कोड",
+    "body": "तपाईंको प्रमाणीकरण कोड: {code}\n\nयो १५ मिनेटमा समाप्त हुन्छ।"
+  }
+}

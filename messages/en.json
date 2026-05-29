@@ -1,0 +1,43 @@
+{
+  "language": {
+    "promptTitle": "Choose your language",
+    "english": "English",
+    "nepali": "नेपाली"
+  },
+  "reader": {
+    "downloadPdf": "Download PDF",
+    "downloadPdfShort": "PDF",
+    "prev": "Previous",
+    "next": "Next",
+    "pageOf": "Page {current} of {total}",
+    "loading": "Loading magazine…",
+    "swipeHint": "Swipe left or right, or tap the sides of the page",
+    "transitionStyle": "Page transition",
+    "transitionSlide": "Slide (gentle)",
+    "transitionCrossfade": "Crossfade",
+    "transitionPush": "Push (book)"
+  },
+  "download": {
+    "title": "Download the magazine",
+    "email": "Email address",
+    "consent": "Add me to the Kritrim Mailing list and let me download the PDF",
+    "sendCode": "Send code",
+    "codeLabel": "Enter 6-digit code",
+    "verify": "Verify & download",
+    "success": "Download started. Thank you!",
+    "invalidEmail": "Please enter a valid email.",
+    "consentRequired": "Consent is required to continue.",
+    "codeSent": "We sent a code to your email.",
+    "invalidCode": "Invalid or expired code.",
+    "rateLimited": "Too many attempts. Please try again later.",
+    "close": "Close"
+  },
+  "footer": {
+    "developedBy": "Site developed by Kritrim Solutions",
+    "whatsapp": "Contact on WhatsApp"
+  },
+  "email": {
+    "subject": "Your Everest Day magazine verification code",
+    "body": "Your verification code is: {code}\n\nIt expires in 15 minutes."
+  }
+}
