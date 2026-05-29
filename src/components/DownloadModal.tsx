@@ -155,8 +155,8 @@ export function DownloadModal({ open, onClose }: DownloadModalProps) {
             />
             <button
               type="submit"
-              disabled={busy}
-              className="w-full rounded-lg bg-[#E91E63] py-2.5 font-medium text-white hover:bg-[#c2185b] disabled:opacity-60"
+              disabled={busy || !consent}
+              className="w-full rounded-lg bg-[#E91E63] py-2.5 font-medium text-white hover:bg-[#c2185b] disabled:cursor-not-allowed disabled:opacity-60"
             >
               {t("download.sendCode")}
             </button>

@@ -11,6 +11,19 @@ function getResend(): Resend {
   return new Resend(key);
 }
 
+/** Segment ID (new) or legacy Audience ID from the Resend dashboard. */
+function getMailingListSegmentId(): string | undefined {
+  return (
+    process.env.RESEND_SEGMENT_ID?.trim() ||
+    process.env.RESEND_AUDIENCE_ID?.trim() ||
+    undefined
+  );
+}
+
+function isSendOnlyKeyError(message: string): boolean {
+  return message.toLowerCase().includes("restricted to only send");
+}
+
 export async function sendVerificationEmail(
   email: string,
   code: string,
@@ -21,23 +34,82 @@ export async function sendVerificationEmail(
   const text = m.body.replace("{code}", code);
   const from = process.env.RESEND_FROM_EMAIL ?? "onboarding@resend.dev";
 
-  await getResend().emails.send({
+  const { error } = await getResend().emails.send({
     from,
     to: email,
     subject,
     text,
   });
+
+  if (error) {
+    throw new Error(`Resend send failed: ${error.message}`);
+  }
 }
 
+/**
+ * Adds verified email to the Resend segment. Does not throw — download still succeeds
+ * if the API key is send-only or contacts API fails.
+ */
 export async function addToAudience(email: string): Promise<void> {
-  const audienceId = process.env.RESEND_AUDIENCE_ID;
-  if (!audienceId) {
-    console.warn("RESEND_AUDIENCE_ID not set; skipping audience subscribe");
+  const segmentId = getMailingListSegmentId();
+  if (!segmentId) {
+    console.warn(
+      "RESEND_SEGMENT_ID / RESEND_AUDIENCE_ID not set; skipping mailing list",
+    );
     return;
   }
-  await getResend().contacts.create({
-    audienceId,
+
+  const resend = getResend();
+
+  const withSegment = await resend.contacts.create({
+    email,
+    unsubscribed: false,
+    segments: [{ id: segmentId }],
+  });
+
+  if (!withSegment.error) return;
+
+  if (isSendOnlyKeyError(withSegment.error.message)) {
+    console.warn(
+      "Resend mailing list skipped: API key is send-only. " +
+        "Create a Full access key at resend.com/api-keys to add contacts to segments.",
+    );
+    return;
+  }
+
+  const legacyAudience = await resend.contacts.create({
+    audienceId: segmentId,
     email,
     unsubscribed: false,
   });
+
+  if (!legacyAudience.error) return;
+
+  if (isSendOnlyKeyError(legacyAudience.error.message)) {
+    console.warn(
+      "Resend mailing list skipped: API key is send-only. " +
+        "Create a Full access key at resend.com/api-keys to add contacts to segments.",
+    );
+    return;
+  }
+
+  const added = await resend.contacts.segments.add({
+    email,
+    segmentId,
+  });
+
+  if (added.error) {
+    if (isSendOnlyKeyError(added.error.message)) {
+      console.warn(
+        "Resend mailing list skipped: API key is send-only. " +
+          "Create a Full access key at resend.com/api-keys to add contacts to segments.",
+      );
+      return;
+    }
+    console.error(
+      "Resend mailing list failed:",
+      added.error.message,
+      `(create: ${withSegment.error.message})`,
+    );
+  }
 }

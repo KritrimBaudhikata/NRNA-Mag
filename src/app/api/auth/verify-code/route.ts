@@ -69,7 +69,7 @@ export async function POST(request: Request) {
     try {
       await addToAudience(email);
     } catch (e) {
-      console.warn("audience subscribe failed", e);
+      console.error("mailing list subscribe failed", e);
     }
 
     const token = await createDownloadToken(email);

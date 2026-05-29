@@ -20,7 +20,7 @@
   "download": {
     "title": "Download the magazine",
     "email": "Email address",
-    "consent": "Add me to the Kritrim Mailing list and let me download the PDF",
+    "consent": "Add me to the mailing list and let me download the PDF",
     "sendCode": "Send code",
     "codeLabel": "Enter 6-digit code",
     "verify": "Verify & download",

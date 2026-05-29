@@ -108,7 +108,8 @@ dir public\magazine\page-*.png
 |----------|------------------|-------------|
 | `SITE_URL` | Optional | e.g. `http://localhost:3000` |
 | `TOKEN_SECRET` | Yes | Long random string (JWT for download session) |
-| `DATABASE_URL` | Optional | Default: `file:./data/verifications.db` |
+| `DATABASE_URL` | Optional | Local: `file:./data/verifications.db`. Turso: `libsql://...` |
+| `DATABASE_AUTH_TOKEN` | Turso only | Database token from Turso dashboard (or `TURSO_AUTH_TOKEN`) |
 | `RESEND_API_KEY` | Optional* | Resend API key — if empty, codes print in the terminal |
 | `RESEND_AUDIENCE_ID` | Optional | Resend Audience ID for “Kritrim Mailing list” |
 | `RESEND_FROM_EMAIL` | Optional | Verified sender, e.g. `magazine@nrnahk.org` |
@@ -187,13 +188,15 @@ Local SQLite (`file:./data/...`) does **not** persist on Vercel.
 
 1. Create a database at [turso.tech](https://turso.tech).
 2. Create an auth token.
-3. Set in Vercel → **Settings → Environment Variables**:
+3. Create a database **token** (Turso dashboard → your database → **Tokens** → Create).
+4. Set in Vercel → **Settings → Environment Variables** (and in `.env.local` for local dev):
 
    ```
    DATABASE_URL=libsql://your-db-name-org.turso.io
+   DATABASE_AUTH_TOKEN=eyJhbG...   # token from step 3
    ```
 
-   Plus the libSQL auth token if your client URL requires it (use the connection string Turso provides for `@libsql/client`).
+   Without `DATABASE_AUTH_TOKEN`, Turso returns **401 Unauthorized**.
 
 Tables are created automatically on first API request (`initDb()`).
 
@@ -224,6 +227,7 @@ Remove or leave `PDF_LOCAL_PATH` unset in production.
 | `SITE_URL` | `https://everestday.nrnahk.org` |
 | `TOKEN_SECRET` | New long random string (not the same as local) |
 | `DATABASE_URL` | Turso `libsql://...` URL |
+| `DATABASE_AUTH_TOKEN` | Turso database token |
 | `RESEND_API_KEY` | From Resend dashboard |
 | `RESEND_AUDIENCE_ID` | Kritrim Mailing list audience ID |
 | `RESEND_FROM_EMAIL` | Verified sender on your domain |
@@ -320,7 +324,8 @@ Codes expire after **15 minutes**; max **5** wrong attempts per request. Rate li
 | PDF download 401 | Verify code first; cookie expires in 10 minutes |
 | PDF download 500 | Set `PDF_BLOB_PATH` + token on Vercel, or `PDF_LOCAL_PATH` locally |
 | Vercel build fails | Ensure `page-*.png` and `pages.json` are in Git; run `npm run build` locally |
-| Database errors on Vercel | Use Turso `libsql://` URL, not `file:./data/...` |
+| Database 401 on Turso | Set `DATABASE_AUTH_TOKEN` (or `TURSO_AUTH_TOKEN`) with the DB URL |
+| Database errors on Vercel | Use Turso `libsql://` URL + token, not `file:./data/...` |
 | `git push` very slow | ~200 MB of PNGs — normal; consider Git LFS only if needed |
 
 ---

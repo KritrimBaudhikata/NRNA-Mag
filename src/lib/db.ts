@@ -1,11 +1,52 @@
-import { createClient, type Client } from "@libsql/client";
+import { mkdirSync } from "fs";
+import { dirname, isAbsolute, join } from "path";
+import { createClient, type Client, type Config } from "@libsql/client";
 
 let client: Client | null = null;
 
+function isLocalDatabaseUrl(url: string): boolean {
+  return url.startsWith("file:");
+}
+
+function resolveLocalDatabaseUrl(configured?: string): string {
+  const relative =
+    configured?.replace(/^file:/, "").replace(/^\.\//, "") ??
+    join("data", "verifications.db");
+
+  const absolute = isAbsolute(relative)
+    ? relative
+    : join(/* turbopackIgnore: true */ process.cwd(), relative);
+
+  mkdirSync(dirname(absolute), { recursive: true });
+
+  const normalized = absolute.replace(/\\/g, "/");
+  return `file:${normalized}`;
+}
+
+function resolveClientConfig(): Config {
+  const configured = process.env.DATABASE_URL?.trim();
+
+  if (!configured || isLocalDatabaseUrl(configured)) {
+    return { url: resolveLocalDatabaseUrl(configured) };
+  }
+
+  const authToken =
+    process.env.DATABASE_AUTH_TOKEN?.trim() ||
+    process.env.TURSO_AUTH_TOKEN?.trim();
+
+  if (!authToken) {
+    throw new Error(
+      "Remote DATABASE_URL (Turso) requires DATABASE_AUTH_TOKEN or TURSO_AUTH_TOKEN. " +
+        "Create a token in the Turso dashboard → your database → Tokens.",
+    );
+  }
+
+  return { url: configured, authToken };
+}
+
 export function getDb(): Client {
   if (!client) {
-    const url = process.env.DATABASE_URL ?? "file:./data/verifications.db";
-    client = createClient({ url });
+    client = createClient(resolveClientConfig());
   }
   return client;
 }
